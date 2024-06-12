@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            button{
+                height: 80px;
+                width: 80px;
+                font-size: 40px;
+                text-align: centnumber   
+                 }
+            input{
+                width: 330px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="text" readonly><br><br>
+    
+
+        <button type="button" onclick="appendToResult(1)">1</button>
+        <button type="button" onclick="appendToResult(2)">2</button>
+        <button type="button" onclick="appendToResult(3)">3</button>
+        <button type="button" onclick="appendToResult('+')">+</button><br>
+
+        <button type="button" onclick="appendToResult(4)">4</button>
+        <button type="button" onclick="appendToResult(5)">5</button>
+        <button type="button" onclick="appendToResult(6)">6</button>
+        <button type="button" onclick="appendToResult('-')">-</button><br>
+
+        <button type="button" onclick="appendToResult(7)">7</button>
+        <button type="button" onclick="appendToResult(8)">8</button>
+        <button type="button" onclick="appendToResult(9)">9</button>
+        <button type="button" onclick="appendToResult('x')">x</button><br>
+
+        <button type="button" onclick="clearInputs()">C</button>
+        <button type="button" onclick="appendToResult(0)">0</button>
+        <button type="button" onclick="calculate()">=</button>
+        <button type="button" onclick="appendToResult('/')">/</button><br>
+
+        <script>
+            function appendToResult(value){
+                document.getElementById("text").value += value; 
+            }
+
+            function clearInputs() {
+                document.getElementById('text').value = '';
+            }
+
+            function calculate(){
+                var result = document.getElementById("text").value;
+                var calculatedResult = eval(result);
+                document.getElementById("text").value = calculatedResult;
+            }
+        </script>
+    </body>
+</html>
